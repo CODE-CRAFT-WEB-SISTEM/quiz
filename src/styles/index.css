@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Permanent+Marker&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: #E5E5E5;
+  text-shadow: 0 0 1px black;
+  color: #292929;
+  background-image: url('/src/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  font-family: "Concert One", sans-serif;
+  color: darkred;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 24pt;
+}
+
+h4 {
+  margin: 2.5rem 0 1rem 0;
+}
+
+.info {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  font-size: 10pt;
+}
+
+.info li {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: .4rem;
+  margin-bottom: .5rem;
+}
+
+.quizForm {
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 90%;
+  display: none;
+}
+
+label {
+  font-size: 11pt;
+  font-weight: 500;
+}
+
+select {
+  height: 30px;
+  border-radius: 5px;
+  padding: 3px;
+  font-weight: bolder;
+  background-color: transparent;
+  border: 2px dashed #292929;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.lifeDisplay {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14pt;
+  gap: .2rem;
+  background-color: #000;
+  color: white;
+  padding: .2rem;
+  border-radius: 10px;
+}
+
+.lifeDisplay i {
+  color: red;
+}
+
+button {
+  height: 40px;
+  border-radius: 20px;
+  font-weight: bolder;
+  border: 0;
+  background-color: darkred;
+  color: white;
+  cursor: pointer;
+  margin: 0 0 2rem 0;
+  font-family: "Concert One", sans-serif;
+}
+
+/* START FUNCTION */
+
+.start {
+  margin: 0 auto;
+  display: block;
+  padding: .3rem 1rem;
+}
+
+.runPlay.start {
+  display: none;
+}
+
+.renderForm.quizForm {
+  display: flex;
+}
+
+/* LOADER */
+
+.boxLoader {
+  font-family: "Concert One", sans-serif;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  overflow-y: hidden;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 1.0);
+  display: flex;
+  gap: .5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+
+.loader {
+  display: flex;
+  position: relative;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+  height: 55px;
+  width: 200px;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  position: relative;
+  align-items: center;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  transform-origin: center;
+  animation-delay: 2s;
+}
+
+.loader .container:nth-child(3) {
+  justify-content: flex-start;
+  justify-items: flex-start;
+  animation: scroll-up 4s infinite ease-in-out;
+  animation-delay: 3s;
+}
+
+.loader .container:nth-child(2) {
+  justify-content: flex-end;
+  justify-items: flex-end;
+  animation: scroll-down 4s infinite ease-in-out;
+  animation-delay: 3s;
+}
+
+.loader .container:nth-child(1) {
+  justify-content: flex-end;
+  justify-items: flex-end;
+  animation: scroll-down 3s infinite ease-in-out;
+  animation-delay: 3s;
+}
+
+.love {
+  background: red;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  left: 8px;
+  margin: 0.8rem 4px;
+  transform: rotate(45deg);
+  animation-delay: 2s;
+}
+
+.love::before, .love::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: red;
+}
+
+.love::before {
+  left: -16px;
+}
+
+.love::after {
+  top: -16px;
+}
+
+.death {
+  display: flex;
+  width: 100%;
+  height: 55px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  animation: rotation 3s infinite ease-in-out;
+  animation-delay: 1s;
+}
+
+.death:after {
+  content: '';
+  height: 63px;
+  position: absolute;
+  border-left: 12px solid red;
+  transform: rotate(45deg);
+  border-radius: 8px;
+  top: -4px;
+}
+
+.death:before {
+  content: '';
+  height: 60px;
+  position: absolute;
+  border-left: 12px solid red;
+  transform: rotate(-45deg);
+}
+
+.loader:hover {
+  animation: none;
+}
+
+.robots {
+  display: flex;
+  width: 100%;
+  height: 55px;
+  justify-content: space-between;
+  background-color: #ff0000;
+  border-radius: 0 8px 8px;
+  padding: 8px;
+  animation-delay: 5s;
+}
+
+.robots::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 50%;
+  animation-delay: 2s;
+  animation: blink 0.5s 2 forwards;
+}
+
+.robots::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 50%;
+  animation-delay: 2s;
+  animation: blink 0.5s 2 forwards;
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  30% {
+    transform: translateY(-150%);
+    filter: blur(10px);
+  }
+
+  60% {
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  30% {
+    transform: translateY(150%);
+    filter: blur(10px);
+  }
+
+  60% {
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes rotation {
+  20%, 100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes blink {
+  0% {
+    height: 0;
+  }
+
+  20% {
+    height: 12px;
+  }
+
+  100% {
+    height: 12px;
+  }
+}
+
+/* SUCEES PAGE STYLE */
+
+.success {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  backdrop-filter: blur(8px);
+  background-color: rgba(900, 900, 900, 0.5);
+  border-radius: 20px;
+}
+
+.success h1 {
+  font-size: 29pt;
+}
+
+.success a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+.success a button {
+  width: 200px;
+}

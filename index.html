@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/styles/index.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>Quiz</title>
+</head>
+
+<body>
+  <div class="content">
+    
+    <div class="boxLoader">
+      <div class="loader">
+        <div class="container">
+          <div class="carousel">
+            <div class="love"></div>
+            <div class="love"></div>
+            <div class="love"></div>
+            <div class="love"></div>
+            <div class="love"></div>
+            <div class="love"></div>
+            <div class="love"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="carousel">
+            <div class="death"></div>
+            <div class="death"></div>
+            <div class="death"></div>
+            <div class="death"></div>
+            <div class="death"></div>
+            <div class="death"></div>
+            <div class="death"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="carousel">
+            <div class="robots"></div>
+            <div class="robots"></div>
+            <div class="robots"></div>
+            <div class="robots"></div>
+            <div class="robots"></div>
+            <div class="robots"></div>
+            <div class="robots"></div>
+          </div>
+        </div>
+      </div>
+      <p>Loading Game...</p>
+    </div>
+    <h1>
+      <i class="bi bi-calendar-heart-fill"></i>
+      <br />
+      Quiz Especial de 3 Meses
+    </h1>
+    <div class="info">
+      <h4>Informações:</h4>
+      <li>Ao acertar de 90% a 100%, você poderá escolher um entre dois prêmios disponíveis.</li>
+      <li>Você tem 2 pontos de vida.</li>
+      <li>se perder todos os pontos, o sistema os restaura a cada 2 minutos.</li>
+      <li>Durante esse período, você fica impossibilitado de enviar as respostas é o tempo de ir tomar um café enquanto pensa.</li>
+    </div>
+    <button id="start" class="start">INICIAR DESAFIO</button>
+    
+    <form id="quizForm" class="quizForm">
+      <input type="hidden" name="accessKey" value="bc76fc73-238a-41b3-9928-3ffe43039301">
+      <label for="questaoA">1) Qual foi o primeiro filme ou série que assistimos juntos?</label>
+      <select id="questaoA">
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Halo">Halo</option>
+        <option value="Madagascat 2">Madagascar 2</option>
+        <option value="The last of Us">The Last of Us</option>
+        <option value="Loki">Loki</option>
+        <option value="Os Vingadores">Os Vingadores</option>
+        <option value="Nenhuma das opções anteriores">Nenhuma das opções anteriores</option>
+      </select>
+      <!-- questaoA -->
+      <label for="questaoB">2) Qual foi a primeira lanchonete que visitamos?</label>
+      <select id="questaoB">
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Barrigudo">X-Barrigudo</option>
+        <option value="Marvel">X-Marvel</option>
+        <option value="Lincons">Lincons</option>
+        <option value="American Burguer">American Burguer</option>
+        <option value="Frango no Pote">Frango no Pote</option>
+        <option value="Nenhuma das opções anteriores">Nenhuma das opções anteriores</option>
+      </select>
+      <!-- questaoB -->
+      <label for="questaoC">3) Qual é a nossa música especial?</label>
+      <select id="questaoC">
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Forró Boys:  Amor Virtual">Forró Boys: Amor Virtual</option>
+        <option value="Nadson Ferinha: Duas">Nadson Ferinha: Duas</option>
+        <option value="Ana Castela: Fronteira">Ana Castela: Fronteira</option>
+        <option value="Jorge e Matheus: O que é que Tem">Jorge e Matheus: O que é que Tem</option>
+        <option value="Luan Pereira: Senta pro Bruto">Luan Pereira: Senta pro Bruto</option>
+        <option value="Nenhuma das opções anteriores">Nenhuma das opções anteriores</option>
+      </select>
+      <!-- questaoC -->
+      <label for="questaoD">4) Qual foi o primeiro presente que você me deu?</label>
+      <select id="questaoD">
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Camiseta">Camiseta</option>
+        <option value="Colar">Colar</option>
+        <option value="Tenis">Tênis</option>
+        <option value="Oculos">Oculos</option>
+        <option value="Relogio">Relógio</option>
+        <option value="Nenhuma das opções anteriores">Nenhuma das opções anteriores</option>
+      </select>
+      <!-- questaoD -->
+      <label for="questaoE">5) Qual é o apelido carinhoso que você me chama que mais gosto?</label>
+      <select id="questaoE">
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Treinzin Lindo">Treinzin Lindo</option>
+        <option value="Amor">Amor</option>
+        <option value="Nenhuma das opções anteriores">Nenhuma das opções anteriores</option>
+      </select>
+      <!-- questaoE -->
+      <label for="questaoF">6) Qual foi o lugar mais memorável onde já estivemos juntos?</label>
+      <select id="questaoF">
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Laguinho do Vovo">Passeio no Laguinho do Vovo</option>
+        <option value="Deck Mata da Bica">Passeio no Deck / Mata da Bica</option>
+        <option value="Quarto 03">Quarto 03</option>
+        <option value="Nenhuma das opções anteriores">Nenhuma das opções anteriores</option>
+      </select>
+      <!-- questaoF -->
+      <label for="questaoG">7) Qual é minha cor preferida?</label>
+      <select id="questaoG">
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Verde">Verde</option>
+        <option value="Vermelho">Vermelho</option>
+        <option value="Branco">Branco</option>
+        <option value="Azul">Azul</option>
+        <option value="Preto">Preto</option>
+        <option value="Nenhuma das opções anteriores">Nenhuma das opções anteriores</option>
+      </select>
+      <!-- questaoG -->
+      <label for="questaoH">8) Qual foi o momento mais engraçado que compartilhamos até agora?</label>
+      <select id="questaoH">
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="O dia em que fez minha sobrancelha">O dia em que fez minha sobrancelha</option>
+        <option value="O dia em que tiramos fotos zoadas">O dia em que tiramos fotos zoadas</option>
+        <option value="Nenhuma das opções anteriores">Nenhuma das opções anteriores</option>
+      </select>
+      <!-- questaoH -->
+      <label for="questaoI">9) Qual foi o dia em que tivemos nossa primeira discussão e como resolvemos?</label>
+      <select id="questaoI">
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Discutindo">Discutindo</option>
+        <option value="Conversando">Conversando</option>
+        <option value="Nenhuma das opções anteriores">Nenhuma das opções anteriores</option>
+      </select>
+      <!-- questaoI -->
+      <label for="questaoJ">10) De todas as nossas lembranças juntos até agora, separei essas duas em sua opnião qual
+        você acha que é a minha favorita?</label>
+      <select id="questaoJ">
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Nosso primeiro encontro">Nosso primeiro encontro</option>
+        <option value="Nosso segundo encontro">Nosso segundo encontro</option>
+        <option value="Nenhuma das opções anteriores">Nenhuma das opções anteriores</option>
+      </select>
+      <!-- questaoJ -->
+      <div id="lifeDisplay" class="lifeDisplay">
+        <i id="heart" class="bi bi-heart-fill"></i> <span id="lifeAcount">2</span>
+      </div>
+      <div id="timerDisplay"></div>
+      <button id="enviar" type="submit">CONCLUIR</button>
+    </form>
+    <div id="root"></div>
+  </div>
+  <script src="src/script/index.js" type="module"></script>
+</body>
+
+</html>
