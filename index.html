@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./src/styles/index.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="/src/styles/index.css" type="text/css" media="all" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <title>Quiz</title>
 </head>
@@ -65,6 +65,7 @@
     <button id="start" class="start">INICIAR DESAFIO</button>
     
     <form id="quizForm" class="quizForm">
+      <input type="hidden" name="redirectTo" value="https://code-craft-web-sistem.github.io/quiz/success.html">
       <input type="hidden" name="accessKey" value="bc76fc73-238a-41b3-9928-3ffe43039301">
       <label for="questaoA">1) Qual foi o primeiro filme ou série que assistimos juntos?</label>
       <select id="questaoA">
